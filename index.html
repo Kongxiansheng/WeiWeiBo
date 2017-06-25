@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="{CSS_PATH}/hbschool/erweima.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>河北中学</title>
+<link href="{CSS_PATH}/hbschool/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{JS_PATH}/hbschool/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="{JS_PATH}/hbschool/solideForK13-min.js"></script>
+<script type="text/javascript" src="{JS_PATH}/hbschool/ad_pic.js"></script>
+
+</head>
+
+<body>
+	<div id="mybody">
+    	<div id="top">
+        	<div class="menu">
+        	<li>网站首页</li>
+            	<!-- <ul>
+                	
+                    <li><a href="list.html">学校概况</a></li>
+                    <li><a href="#">规章制度</a></li>
+                    <li><a href="#">德育网</a></li>
+                    <li><a href="#">教研网</a></li>
+                    <li><a href="#">名师风采</a></li>
+                    <li><a href="#">高考专栏</a></li>
+                    <li><a href="#">图书馆</a></li>
+                    <li><a href="#">校友会</a></li>
+                    <li><a href="#">河中论坛</a></li>
+                    <li><a href="#">查询系统</a></li>
+                    <li><a href="#" class="specil">东校区</a></li>                    
+                </ul> -->
+                {pc:content action="category" catid="0" num="11" siteid="$siteid" order="listorder ASC"}{/pc}
+                
+        		{loop $data $v}
+        		<!-- 将东校区进行单独设置 -->
+        		{if $v['catid']=='19'}
+        		<li><a href="{$v['url']}" class="specil">{$v['catname']}</a></li> 
+        		 <?php 
+                        $curname=$v['catname'];
+                    ?>
+        		{else}
+        		 <li><a href="{$v['url']}">{$v['catname']}</a></li> 
+        		 {/if}
+        		{/loop}
+        		
+            </div>
+            <div id="search">
+            <input name="search" type="text" class="search_text" /><input name="searchbut" type="button" class="search_but" value=" " />
+            </div>
+        </div>
+ <!--第一部分内容-->
+        <div id="no1">
+        	<div id="picnews">
+            
+           	 <div class="container" id="idTransformView">
+  <ul class="slider" id="idSlider">
+    <li><img src="{IMG_PATH}/hbschool/pic.jpg" width="280" height="210"/>
+    <p>adfasdfsadf</p></li>
+    <li><img src="{IMG_PATH}/hbschool/pic.jpg" width="280" height="210"/>
+     <p>adfasdfsadf</p></li>
+    <li><img src="{IMG_PATH}/hbschool/pic.jpg" width="280" height="210" usemap="#Map3" border="0"/>
+      <map name="Map3" id="Map3">
+        <area shape="rect" coords="10,62,115,164" href="#" />
+      </map>
+     <p>adfasdfsadf</p></li>
+  </ul>
+  <ul class="num" id="idNum">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+</div>
+           	  <div id="news">
+                   <h1><img src="{IMG_PATH}/hbschool/news_pic_title.gif" width="430" height="50" usemap="#Map2" border="0" />
+                     <map name="Map2" id="Map2">
+                       <area shape="rect" coords="386,21,430,44" href="{APP_PATH}index.php?m=constant&c=index&a=lists&catid=25" />
+                     </map>
+                   </h1>
+                   {pc:content action="lists" catid="25" order="inputtime DESC" num="8"}{/pc}
+                   {loop $data $v}
+                   	<li><a href="{$v['url']}" >{$v['title']}</a><span class="newsdate">{date('Y-m-d',$v['inputtime'])}</span></li>
+                   {/loop}
+                   <!-- <ul >
+                    <li><a href="content.html" class="hot">【家长学校1306期】大学主要的专业介绍</a><span class="newsdate">2013-05-10</span></li>
+                   	<li><a href="#" >[图文]化学老师于文英举办观摩课活动 </a><span class="newsdate">2013-05-10</span></li>
+                    <li><a href="#">[图文]本部数学组组织公开课教学</a><span class="newsdate">2013-05-10</span></li>
+                    <li><a href="#">[图文]生物老师开展观摩课活动</a><span class="newsdate">2013-05-10</span></li>
+                    <li><a href="#">[图文]首届“五四杯”青年篮球对抗赛成功举办</a><span class="newsdate">2013-05-10</span></li>
+                    <li><a href="#">[组图]校工会组织教职工广场舞展示、交流活动</a><span class="newsdate">2013-05-10</span></li>
+                    <li><a href="#">[组图]高二理科部召开第二次月考表彰大会</a><span class="newsdate">2013-05-10</span></li>
+                    <li><a href="#">[组图]加强消防培训，确保学生安全</a><span class="newsdate">2013-05-10</span></li>
+                   </ul> -->
+                  
+                 </div>
+            </div>
+          <div id="notice">
+          	<h1><a href="#"><img src="{IMG_PATH}/hbschool/30.gif" width="30" height="9" /></a></h1>
+
+          	{pc:content action="lists" catid="26" order="inputtime DESC" num="8"}{/pc}
+                   {loop $data $v}
+                   	<li><a href="{$v['url']}" >{$v['title']}</a><span class="newsdate">{date('Y-m-d',$v['inputtime'])}</span></li>
+                   {/loop}
+
+            <!-- <ul>
+           	  <li><a href="#" ><img src="{IMG_PATH}/hbschool/pot.gif" width="4" height="4" /> 河北中学男子篮球体育特长生招生简章 (2013-04-11)</a></li>
+                   	<li><a href="#" ><img src="{IMG_PATH}/hbschool/pot.gif" width="4" height="4" /> 河北中学音乐特长生复试名单 (2013-04-08)</a></li>
+                    <li><a href="#"><img src="{IMG_PATH}/hbschool/pot.gif" width="4" height="4" /> 河北中学2013年艺术特长生招生简章 (2013-03-01)</a></li>
+                    <li><a href="#"><img src="{IMG_PATH}/hbschool/pot.gif" width="4" height="4" /> 2012-2013第二学期考试、放假安排 (2013-02-25) </a></li>
+            </ul> -->
+          </div>
+        </div>
+ <!--第二部分内容-->
+
+	  <div id="no2">
+        	<div class="news_content">
+            	<h1><img src="{IMG_PATH}/hbschool/news_jy_title.gif" width="480" height="40" usemap="#Map" border="0" alt="教研网" />
+                  <map name="Map" id="Map">
+                    <area shape="rect" coords="439,11,481,33" href="{APP_PATH}index.php?m=constant&c=index&a=lists&catid=11" />
+                  </map>
+            	</h1>
+         		<img src="{IMG_PATH}/hbschool/news_jy_pic.gif" width="130" height="165" alt="tp" />
+
+
+         		{pc:content action="lists" catid="11" order="inputtime DESC" num="8"}{/pc}
+                   {loop $data $v}
+                   	<li><a href="{$v['url']}" >{$v['title']}</a><span class="newsdate">{date('Y-m-d',$v['inputtime'])}</span></li>
+                   {/loop}
+                 <!-- <ul>
+                	<li><a href="#">[公开课教学][图文]化学老师于文英举办观摩课活动</a> </li> 
+					<li><a href="#">[公开课教学][图文]本部数学组组织公开课教学校调研 </a> </li> 
+					<li><a href="#">[公开课教学][图文]生物老师开展观摩课活动</a> </li>  
+ 					<li><a href="#">[教学交流][组图]文科部高一年级召开期中考试分析…</a> </li>  
+					<li><a href="#">[教与学][图文]【教与学】打破思维定势走出误区…</a> </li>  
+ 					<li><a href="#">[教学交流][组图]石家庄市教科所专家来我</a> </li> 
+                </ul> -->
+          </div>
+            <div class="news_content" style="margin-left:45px; _margin-left:25px">
+            	<h1><img src="{IMG_PATH}/hbschool/news_dy_title.gif" width="480" height="40" usemap="#Map" border="0" alt="教研网" />
+                  <map name="Map" id="Map">
+                    <area shape="rect" coords="439,11,481,33" href="439,11,481,33" href="{APP_PATH}index.php?m=constant&c=index&a=lists&catid=12" />
+                  </map>
+            	</h1>
+         		<img src="{IMG_PATH}/hbschool/news_dy_pic.gif" width="130" height="165" alt="tp" />
+
+         		{pc:content action="lists" catid="12" order="inputtime DESC" num="8"}{/pc}
+                   {loop $data $v}
+                   	<li><a href="{$v['url']}" >{$v['title']}</a><span class="newsdate">{date('Y-m-d',$v['inputtime'])}</span></li>
+                   {/loop}
+               <!--  <ul>
+                	<li><a href="#">[公开课教学][图文]化学老师于文英举办观摩课活动</a> </li> 
+					<li><a href="#">[公开课教学][图文]本部数学组组织公开课教学校调研 </a> </li> 
+					<li><a href="#">[公开课教学][图文]生物老师开展观摩课活动</a> </li>  
+ 					<li><a href="#">[教学交流][组图]文科部高一年级召开期中考试分析…</a> </li>  
+					<li><a href="#">[教与学][图文]【教与学】打破思维定势走出误区…</a> </li>  
+ 					<li><a href="#">[教学交流][组图]石家庄市教科所专家来我</a> </li> 
+                </ul> -->
+            </div>
+          </div>
+ <!--第三部分内容-->  
+ 			
+ <!--第四部分内容-->
+      <div id="no4">
+      	<div id="synopsis">
+   	     <img src="{IMG_PATH}/hbschool/gnq.gif" width="258" height="260" usemap="#Map4" style="margin-top:10px;" border="0"/>
+         <map name="Map4" id="Map4">
+           <area shape="rect" coords="144,133,250,240" href="成绩查询" />
+           <area shape="rect" coords="12,129,119,239" href="通讯录" />
+           <area shape="rect" coords="9,6,116,113" href="视频" />
+           <area shape="rect" coords="140,9,243,114" href="班级空间" />
+         </map>
+        </div>
+        <div id="slide_1">
+		<div class="slide_content">
+			<ul>
+				<li>					
+					<a href="#"><img src="{IMG_PATH}/hbschool/tup.gif" alt=""></a>
+					<p>校园美景</p>
+			  </li>
+				<li>					
+					<a href="#"><img src="{IMG_PATH}/hbschool/tup.gif" alt=""></a>
+					<p>校园美景</p>
+				</li>
+				<li>					
+					<a href="#"><img src="{IMG_PATH}/hbschool/tup.gif" alt=""></a>
+					<p>校园美景</p>
+				</li>
+				<li>					
+					<a href="#"><img src="{IMG_PATH}/hbschool/tup.gif" alt=""></a>
+					<p>校园美景</p>
+				</li>
+				<li>					
+					<a href="#"><img src="{IMG_PATH}/hbschool/tup.gif" alt=""></a>
+					<p>校园美景</p>
+				</li>
+				<li>					
+					<a href="#"><img src="{IMG_PATH}/hbschool/tup.gif" alt=""></a>
+					<p>校园美景</p>
+				</li>			
+			</ul>
+		</div>
+		<ul class="index_name"></ul>		
+	    </div>
+      </div>
+
+     </div>    
+<div id="foot">	
+  <div id="nr">
+    	<div class="foot_link" >
+        	<h1><img src="{IMG_PATH}/hbschool/foot_link.gif" width="150" height="36" alt="友情链接" /></h1>
+            <ul >
+            	<li><a href="#">邯郸市第一中学的网站</a></li>
+                <li><a href="#">邯郸市第一中学</a></li>
+                <li><a href="#">邯郸市第一中学</a></li>
+                <li><a href="#">邯郸市第一中学</a></li>
+                <li><a href="#">邯郸市第一中学</a>          </li>
+            </ul >
+    	</div>
+    	<div class="foot_link" >
+        	<h1><img src="{IMG_PATH}/hbschool/foot_school.gif" width="150" height="36" alt="友情链接" /></h1>
+            <ul >
+            	<li><a href="#">邯郸市第一中学的网站</a></li>
+                <li><a href="#">邯郸市第一中学</a></li>
+                <li><a href="#">邯郸市第一中学</a></li>
+                <li><a href="#">邯郸市第一中学</a></li>
+                <li><a href="#">邯郸市第一中学</a></li>
+            </ul >
+           
+   	      </div>
+          
+          <div class="foot_link">
+        	<h1><img src="{IMG_PATH}/hbschool/foot_down.gif" width="150" height="36" alt="资源下载" /></h1>
+            <ul>
+            	<li><a href="#">[资源中心]教师班主任成绩公示系统</a></li>
+                <li><a href="#">[资源中心]高考资源网</a></li>
+                <li><a href="#">[资源中心]中学学科网系统</a></li>
+                <li><a href="#">[资源中心]全品高考网</a></li>
+                <li><a href="#">[资源中心]志鸿网园校办公系统</a></li>
+            </ul>            
+   	      </div>
+          
+              <div class="foot_link" style="margin-right:0">
+        	<h1><img src="{IMG_PATH}/hbschool/foot_count.gif" width="150" height="36" alt="网站统计" /></h1>
+            <ul>
+            	<li>总访问量：2600700</li>
+                <li>人总浏览量：3482048人</li>
+                <li>今日访问：2506人</li>
+                <li>日均访问：1653人</li>
+                <li>当前在线：21人</li>
+            </ul>            
+   	      </div>
+  </div>
+  <div id="copyright">Copyright © 2008－2013 http://www.***.com All Rights Reserved   网站备案：冀ICP备00000000号</div>
+</div>
+	  <div id="erweima">
+
+	  </div>
+	  <div id="qqweibo">
+		<img src="{IMG_PATH}/hbschool/qq.gif" /><br />
+		<img src="{IMG_PATH}/hbschool/weibo.gif" />
+	  </div>
+	  <script type="text/javascript">
+		$("#close").click(function(){
+			$(this).parent().css("display",'none');
+		});
+	  </script>
+</body>
+
+</html>
